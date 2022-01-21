@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }	
+    /* Div Align Box's */
+.full {
+    background: url('./src/wall.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+.shadow {
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+margin:auto;
+width:100%;
+background-color:white;
+padding:20px;
+}
+ </style>
+ 
+ <script>
+
+</script> 
+</head>
+<body class='full'>
+
+  <!-- Modal -->
+  <div class="modal fade" id="viewWorkOrder" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Work Order #667</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+		
+		<p>Name: <strong>megan</strong></p>
+		<p>Telephone: <strong>083444555</strong></p>
+		<p>Time Logged: <strong>3.36pm - 05/08/2017</strong></p>
+		<p>Last Updated: <strong>3.36pm - 05/08/2017</strong></p>
+		<p>&nbsp;</p>		
+		<div>
+		<button type="button" class="btn btn-primary pull-left">Add Note</button>
+		<button type="button" class="btn btn-danger pull-right">Close Ticket</button>
+		</div>
+		<p>&nbsp;</p>			
+		<p>&nbsp;</p>	
+		<p><strong>Message:</strong></p>
+		<div class="alert alert-warning">power out in corridor and the computer is not working IT said we were to contact you.</div>
+		<p><strong>Last Update:</strong> Joe Bloggs</p>
+		<div class="well">went over and switched it back on.</div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="./">Maintenance Helpdesk</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Joe Bloggs</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+	
+    <div class="col-md-12 tablegroup  table-responsive" id='tablegroup0'>
+	
+<p>&nbsp;</p>    
+	
+<div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Open Work Orders
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a href="#">Closed Work Orders</a></li>
+  </ul>
+</div>
+
+	
+	<div class="shadow">
+  <table data-toggle="modal" data-target="#viewWorkOrder" class="table table-hover table-striped" >
+    <thead>
+      <tr>
+		<th>Ticket</th>
+        <th>Summary</th>
+		<th>Email</th>
+		<th>Name</th>
+		<th>Telephone</th>
+		<th>Time Logged</th>		
+        <th>Last Updated</th>
+		<th>Machine</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+		<td>335</td>
+        <td>leak in the main...</td>
+		<td>some@some.com</td>
+		<td>Blue</td>
+		<td>bleep 667</td>
+		<td>4.36pm - 14/08/2017</td>
+		<td>6.23pm - 21/08/2017</td>
+        <td>5XC7NYSS</td>
+      </tr>
+      <tr>
+        <td>767</td>
+		<td>power out in corri...</td>
+		<td>meg@some.com</td>
+		<td>megan</td>
+		<td>083444888</td>
+		<td>3.36pm - 05/08/2017</td>
+		<td>4.21pm - 19/08/2017</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>776</td>
+		<td>someone help with a...</td>
+		<td>fran@some.com</td>
+		<td>Fran</td>
+		<td>no number</td>
+		<td>7.37pm - 17/08/2017</td>
+		<td>4.43pm - 27/08/2017</td>
+        <td>G6EX55</td>
+      </tr>
+    </tbody>
+  </table>
+	</div>	
+	</div>	
+
+
+	
+  </div>
+</div>
+
+
+</body>
+</html>

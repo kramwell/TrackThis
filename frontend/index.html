@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+
+.full {
+    background: url('./src/wall.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.col-md-8 {
+	margin-top: 8rem;
+}
+	
+footer {
+    position: fixed;
+    height: 30px;
+    bottom: 0;
+    width: 98%;	
+}
+
+.btnWide {
+	padding: 2rem 2rem 2rem 2rem;
+	font-size: 20px;	
+}
+input {
+	margin-bottom: 2rem;
+}
+label {
+	margin-bottom: 2rem;
+}
+textarea {
+	margin-bottom: 2rem;
+}
+h1 {
+	font-size: 50px;
+	margin-bottom: 3rem;
+}
+ </style>
+ <script>
+$(document).ready(function(){
+
+	$("#ticketIsLogged").click(function(){
+	$('#IsLogged').html("<div class='alert alert-success'><strong>Success!</strong> Your Ticket has been logged.</div><p>Your ticket number is <strong>TSH5225</strong> and a copy of this has been sent to the email address specified.</p>");
+	});
+
+	$("#LogTicket").on("hidden.bs.modal", function () {
+	//$(".reloadPage").attr('onclick', 'window.location.reload(true);');
+	window.location.reload(true);
+	});
+	
+});
+</script> 
+</head>
+<body class='full'>
+
+  <!-- Modal -->
+  <div class="modal fade" id="LogTicket" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Log a Ticket</h4>
+        </div>
+        <div class="modal-body" id='IsLogged' style="padding-bottom: 50px;padding-left: 40px;padding-right: 40px;">
+		
+              <label for="usrname">Please enter all fields below.</label>
+              <input type="text" class="form-control" id="usrname" placeholder="Name">
+			  <input type="text" class="form-control" id="usrname" placeholder="Email">
+			  <input type="text" class="form-control" id="usrname" placeholder="Telephone Number">
+			  <textarea class="form-control" type="textarea" id="message" placeholder="Message" maxlength="140" rows="7"></textarea>
+        <a id='ticketIsLogged' class="btn btn-success btn-block pull-right"><span class="glyphicon glyphicon-off"></span> Submit Ticket</a>
+		</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="CheckTicket" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Check Ticket Status</h4>
+        </div>
+        <div class="modal-body" id='loggedStatus' style="padding:40px 50px;">
+              <label for="usrname">Please enter all fields</label>
+              <input type="text" class="form-control" id="usrname" placeholder="Ticket Number">
+			  <input type="text" class="form-control" id="usrname" placeholder="Email Address">
+              <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Check Status</button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>  
+
+  <!-- Modal -->
+  <div class="modal fade" id="LoginModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Maintenance Login</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+		
+              <label for="usrname">Login to Technical Services Portal.</label>
+              <input type="text" class="form-control" id="usrname" placeholder="Username">
+			  <input type="password" class="form-control" id="usrname" placeholder="Password"> 
+			  <a href='ticket.html' class="btn btn-success btn-block pull-right"><span class="glyphicon glyphicon-off"></span> Login</a>
+			  <div id="UserReport"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div> 
+  
+<div class="container">
+  <div class="row">
+	
+    <div class="col-md-8 col-md-offset-2 text-center">
+		<h1>Technical Services Helpdesk</h1><br />
+		<img src="./src/tools.jpg" class="img-rounded img-responsive center-block" alt="">
+	</div>	
+	
+    <div class="col-md-8 col-md-offset-2 text-center">
+
+		<button type="button" class="btn btn-primary btnWide" data-toggle="modal" data-target="#LogTicket"><img src="./src/phone-receiver.png" alt="">&nbsp;LOG A TICKET</button>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<button type="button" class="btn btn-info btnWide" data-toggle="modal" data-target="#CheckTicket"><img src="./src/tool.png" alt="">&nbsp;CHECK STATUS</button>
+	</div>	
+	
+    <div class="col-md-8 col-md-offset-2">
+
+	<h4><span class="glyphicon glyphicon-circle-arrow-right"></span>&nbsp;<a href='#'>Frequently Asked Questions</a></h4>
+	<h4><span class="glyphicon glyphicon-circle-arrow-right"></span>&nbsp;<a href='#'>Bleep Numbers</a></h4>
+	<h4><span class="glyphicon glyphicon-circle-arrow-right"></span>&nbsp;<a href='#'>Emergency Contact</a></h4>	
+	</div>	
+	
+  </div>
+</div>
+
+<footer class="fixed-bottom">
+<p class='text-right'><button type="button" class="btn btn-default" data-toggle="modal" data-target="#LoginModal">Maintenance Login</button></p>
+</footer>
+
+</body>
+</html>
